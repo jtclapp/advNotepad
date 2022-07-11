@@ -1,4 +1,4 @@
-package Controllers;
+package com.web.advNotepad.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +9,8 @@ import java.util.concurrent.ExecutionException;
 public class HomeController
 {
     @GetMapping("/")
-    public void loadHomePage(Model model) throws ExecutionException, InterruptedException {
+    public String loadHomePage(Model model) {
 
+        return "index";
     }
 }
