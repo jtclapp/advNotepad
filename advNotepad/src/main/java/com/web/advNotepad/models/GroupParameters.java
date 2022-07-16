@@ -2,14 +2,12 @@ package com.web.advNotepad.models;
 
 public class GroupParameters
 {
-    String id;
     String group_name;
     int num_of_fields;
     String name_of_fields;
     String description;
 
-    public GroupParameters(String id, String group_name, int num_of_fields, String name_of_fields, String description) {
-        this.id = id;
+    public GroupParameters(String group_name, int num_of_fields, String name_of_fields, String description) {
         this.group_name = group_name;
         this.num_of_fields = num_of_fields;
         this.name_of_fields = name_of_fields;
@@ -20,15 +18,6 @@ public class GroupParameters
     {
 
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getGroup_name() {
         return group_name;
     }

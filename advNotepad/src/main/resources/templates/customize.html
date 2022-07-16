@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <meta charset="UTF-8">
 <title>AdvNotepad</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -365,24 +365,26 @@ textarea.input100 {
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 <h1 class="contact100-form-title">Create a Group</h1>
+<form th:action="@{/NotepadGroupSave}" method="post" th:object="${createdGroup}">
 <div class="wrap-input100 validate-input" data-validate="Group Name">
-    <input required class="input100" type="text" name="groupName" placeholder="Group Name">
+    <input required class="input100" type="text" th:field="*{group_name}" name="groupName" placeholder="Group Name">
     <span class="focus-input100"></span>
 </div>
 <div class="wrap-input100 validate-input" data-validate="Number of fields">
-    <input required class="input100" type="number" name="number" placeholder="Number of fields">
+    <input required class="input100" type="number" max="10" min="1" th:field="*{num_of_fields}" name="number" placeholder="Number of fields">
     <span class="focus-input100"></span>
 </div>
 <div class="wrap-input100 validate-input" data-validate="Names of the fields (comma separated list)">
-    <input required class="input100" type="text" name="FieldNames" placeholder="Names of the fields (comma separated list)">
+    <input required class="input100" type="text" th:field="*{name_of_fields}" name="FieldNames" placeholder="Names of the fields (comma separated list)">
     <span class="focus-input100"></span>
 </div>
 <div class="wrap-input100 validate-input" data-validate="Description">
-    <textarea class="input100" name="description" placeholder="Description"></textarea>
+    <textarea class="input100" th:field="*{description}" name="description" placeholder="Description"></textarea>
     <span class="focus-input100"></span>
 </div>
 <div class="container-contact100-form-btn">
     <button style="" class="contact100-form-btn">Create</button>
 </div>
+</form>
 </body>
 </html>
