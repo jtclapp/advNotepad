@@ -50,4 +50,29 @@ public class GroupService
         }
         return "";
     }
+    public List<Group> getAllUserGroups(String username) throws ExecutionException, InterruptedException {
+        List<Group> groupsList = new ArrayList<>();
+        firestore = FirestoreClient.getFirestore();
+        CollectionReference groups = firestore.collection("Groups");
+        ApiFuture<QuerySnapshot> querySnapshot = groups.get();
+        for(DocumentSnapshot doc:querySnapshot.get().getDocuments()) {
+            Group group = doc.toObject(Group.class);
+            assert group != null;
+            if(group.getCreator().equals(username))
+            {
+                groupsList.add(group);
+            }
+        }
+        return groupsList;
+    }
+    public Group getGroup(String id,String username) throws ExecutionException, InterruptedException {
+        List<Group> groupList = getAllUserGroups(username);
+        for(int i = 0; i <= groupList.size()-1; i++)
+        {
+            if (groupList.get(i).getId().equals(id)) {
+                return groupList.get(i);
+            }
+        }
+        return new Group();
+    }
 }
