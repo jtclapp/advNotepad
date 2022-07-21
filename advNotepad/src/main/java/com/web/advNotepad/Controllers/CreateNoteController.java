@@ -2,12 +2,10 @@ package com.web.advNotepad.Controllers;
 
 import com.web.advNotepad.Services.GroupService;
 import com.web.advNotepad.models.Group;
-import com.web.advNotepad.models.GroupParameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.concurrent.ExecutionException;
 

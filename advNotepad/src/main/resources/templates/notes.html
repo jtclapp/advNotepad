@@ -60,6 +60,316 @@
             overflow-x: hidden;
         }
 }
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Ubuntu-Bold, sans-serif;
+}
+
+/*---------------------------------------------*/
+a {
+	font-family: Ubuntu-Bold;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: Ubuntu-Bold;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input::-webkit-input-placeholder { color: #bdbdd3;}
+input:-moz-placeholder { color: #bdbdd3;}
+input::-moz-placeholder { color: #bdbdd3;}
+input:-ms-input-placeholder { color: #bdbdd3;}
+
+textarea::-webkit-input-placeholder { color: #bdbdd3;}
+textarea:-moz-placeholder { color: #bdbdd3;}
+textarea::-moz-placeholder { color: #bdbdd3;}
+textarea:-ms-input-placeholder { color: #bdbdd3;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+/*---------------------------------------------*/
+.container {
+	max-width: 1200px;
+}
+/*//////////////////////////////////////////////////////////////////
+[ Contact ]*/
+.container-contact100 {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.wrap-contact100 {
+  width: 550px;
+  background: transparent;
+  padding: 50px 0px 160px 0px;
+}
+/*==================================================================
+[ Form ]*/
+
+.contact100-form {
+  width: 100%;
+}
+
+.contact100-form-title {
+  display: block;
+  font-size: 30px;
+  color: #403866;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 150px;
+  height: 62px;
+  background-color: transparent;
+  border-radius: 31px;
+
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.contact100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 31px;
+  background-color: #827ffe;
+  pointer-events: none;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact100-form-btn:hover:before {
+  background-color: #403866;
+  width: calc(100% + 20px);
+}
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+body 				 { background:url(https://scotch.io/wp-content/uploads/2014/07/61.jpg); }
+.container 		{
+  font-family:'Roboto';
+  width:600px;
+  margin:30px auto 0;
+  display:block;
+  background:#FFF;
+  padding:10px 50px 50px;
+}
+h2 		 {
+  text-align:center;
+  margin-bottom:50px;
+}
+h2 small {
+  font-weight:normal;
+  color:#888;
+  display:block;
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting styling ------------------------------- */
+.group 			  {
+  position:relative;
+  left: 25%;
+  margin-bottom:35px;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 10px;
+  display:block;
+  width:600px;
+  border-radius: 25px;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:8px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top:-24px;
+  left:22px;
+  font-size:18px;
+  color:#21201E;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
 </style>
 </head>
 <div class="content">
@@ -70,8 +380,8 @@
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
             <div style="width:200px; margin:0 auto;">
-                <div th:if= "${selectedGroup == null}">
-                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;padding-left: 50px;padding-right: 50px"
+                <div th:if= "${selectedGroup == null}" class="container-contact100-form-btn">
+                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;justify-content: center;margin-bottom:35px;"
                             type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">  Select a group     <span class="caret"></span></button>
                     <ul style="padding: 0;margin-top:5px;" class="dropdown-menu" role="menu">
                         <tr th:each="Group: ${userGroups}">
@@ -81,8 +391,8 @@
                         </tr>
                     </ul>
                 </div>
-                <div th:if= "${selectedGroup != null}">
-                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;padding-left: 50px;padding-right: 50px"
+                <div th:if= "${selectedGroup != null}" class="container-contact100-form-btn">
+                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;justify-content: center;margin-bottom:35px;"
                             type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" th:text="${selectedGroup.getGroup_name()}" ><span class="caret"></span></button>
                     <ul style="padding: 0;margin-top:5px;" class="dropdown-menu" role="menu">
                         <tr th:each="Group: ${userGroups}">
@@ -93,5 +403,74 @@
                     </ul>
                 </div>
             </div>
+<!--<form th:action="@{/createdNoteSave}" method="post" th:object="${createdNote}">-->
+    <div th:if= "${selectedGroup != null}">
+        <form>
+            <div class="group" th:if= "${selectedGroup.getFieldName1() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName1()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName2() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName2()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName3() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName3()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName4() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName4()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName5() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName5()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName6() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName6()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName7() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName7()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName8() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName8()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName9() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName9()}"></label>
+            </div>
+            <div class="group" th:if= "${selectedGroup.getFieldName10() != null}">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label th:text="${selectedGroup.getFieldName10()}"></label>
+            </div>
+            <div class="container-contact100-form-btn" th:if= "${selectedGroup != null}">
+                <button style="" class="contact100-form-btn">Create</button>
+            </div>
+        </form>
+    </div>
+<!--</form>-->
 </body>
 </html>
