@@ -3,11 +3,11 @@ package com.web.advNotepad.models;
 public class GroupParameters
 {
     String group_name;
-    int num_of_fields;
+    String num_of_fields;
     String name_of_fields;
     String description;
 
-    public GroupParameters(String group_name, int num_of_fields, String name_of_fields, String description) {
+    public GroupParameters(String group_name, String num_of_fields, String name_of_fields, String description) {
         this.group_name = group_name;
         this.num_of_fields = num_of_fields;
         this.name_of_fields = name_of_fields;
@@ -26,11 +26,11 @@ public class GroupParameters
         this.group_name = group_name;
     }
 
-    public int getNum_of_fields() {
+    public String getNum_of_fields() {
         return num_of_fields;
     }
 
-    public void setNum_of_fields(int num_of_fields) {
+    public void setNum_of_fields(String num_of_fields) {
         this.num_of_fields = num_of_fields;
     }
 

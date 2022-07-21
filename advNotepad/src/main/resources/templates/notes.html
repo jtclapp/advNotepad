@@ -381,7 +381,8 @@ input:focus ~ .highlight {
 <div class="bg bg3"></div>
             <div style="width:200px; margin:0 auto;">
                 <div th:if= "${selectedGroup == null}" class="container-contact100-form-btn">
-                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;justify-content: center;margin-bottom:35px;"
+                    <button style="font-size: 22px;border-radius: 31px;background-color: #827ffe;
+                            color: #FBFAF5;justify-content: center;margin-bottom:35px;text-align: center;padding: 15px;"
                             type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">  Select a group     <span class="caret"></span></button>
                     <ul style="padding: 0;margin-top:5px;" class="dropdown-menu" role="menu">
                         <tr th:each="Group: ${userGroups}">
@@ -392,7 +393,8 @@ input:focus ~ .highlight {
                     </ul>
                 </div>
                 <div th:if= "${selectedGroup != null}" class="container-contact100-form-btn">
-                    <button style="font-size: 20px;border-radius: 31px;background-color: #827ffe;color: #FBFAF5;justify-content: center;margin-bottom:35px;"
+                    <button style="font-size: 22px;border-radius: 31px;background-color: #827ffe;
+                            color: #FBFAF5;justify-content: center;margin-bottom:35px;text-align: center;padding: 15px;"
                             type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" th:text="${selectedGroup.getGroup_name()}" ><span class="caret"></span></button>
                     <ul style="padding: 0;margin-top:5px;" class="dropdown-menu" role="menu">
                         <tr th:each="Group: ${userGroups}">
@@ -403,65 +405,64 @@ input:focus ~ .highlight {
                     </ul>
                 </div>
             </div>
-<!--<form th:action="@{/createdNoteSave}" method="post" th:object="${createdNote}">-->
     <div th:if= "${selectedGroup != null}">
-        <form>
+        <form th:action="@{/createdNoteSave}" method="post" th:object="${createdNote}">
             <div class="group" th:if= "${selectedGroup.getFieldName1() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName1}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName1()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName2() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName2}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName2()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName3() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName3}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName3()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName4() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName4}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName4()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName5() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName5}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName5()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName6() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName6}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName6()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName7() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName7}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName7()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName8() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName8}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName8()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName9() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName9}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName9()}"></label>
             </div>
             <div class="group" th:if= "${selectedGroup.getFieldName10() != null}">
-                <input type="text" required>
+                <input type="text" th:field="*{fieldName10}" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label th:text="${selectedGroup.getFieldName10()}"></label>
@@ -471,6 +472,5 @@ input:focus ~ .highlight {
             </div>
         </form>
     </div>
-<!--</form>-->
 </body>
 </html>

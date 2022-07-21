@@ -23,7 +23,7 @@ public class CustomizeController
         return "customize";
     }
     @PostMapping("/NotepadGroupSave")
-    public String saveCreatedThread(@ModelAttribute("createdGroup") GroupParameters capturedGroup, Model model) throws ExecutionException, InterruptedException {
+    public String saveCreatedGroup(@ModelAttribute("createdGroup") GroupParameters capturedGroup, Model model) throws ExecutionException, InterruptedException {
         groups = new Group();
         groupParameters = new GroupParameters();
         groupService = new GroupService();
