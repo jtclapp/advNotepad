@@ -22,50 +22,30 @@ public class CustomizeController
         model.addAttribute("createdGroup",new GroupParameters());
         return "customize";
     }
-    @PostMapping("/NotepadGroupSave")
-    public String saveCreatedGroup(@ModelAttribute("createdGroup") GroupParameters capturedGroup, Model model) throws ExecutionException, InterruptedException {
+    @PostMapping("/NotepadGroupContinue")
+    public String continueWithCreatedGroup(@ModelAttribute("createdGroup") GroupParameters capturedGroup, Model model) {
         groups = new Group();
-        groupParameters = new GroupParameters();
-        groupService = new GroupService();
-        groupParameters.setGroup_name(capturedGroup.getGroup_name());
-        groupParameters.setDescription(capturedGroup.getDescription());
-        groupParameters.setName_of_fields(capturedGroup.getName_of_fields());
-        groupParameters.setNum_of_fields(capturedGroup.getNum_of_fields());
-
-        System.out.println("Group Name: " + groupParameters.getGroup_name());
-        groups.setGroup_name(groupParameters.getGroup_name());
-        System.out.println("Group Field Names: " + groupParameters.getName_of_fields());
-        System.out.println("Group Number of Fields: " + capturedGroup.getNum_of_fields());
-        System.out.println("Group Description: " + groupParameters.getDescription() + "\n");
-        groups.setDescription(groupParameters.getDescription());
+        groups.setGroup_name(capturedGroup.getGroup_name());
+        groups.setDescription(capturedGroup.getDescription());
         groups.setCreator("admin");
 
-        String[] fieldNames = groupParameters.getName_of_fields().split(",");
-        for (int i = 0; i < fieldNames.length; i++) {
-            String fieldName = fieldNames[i];
-
-            if (i == 0) {
-                groups.setFieldName1(fieldName);
-            } else if (i == 1) {
-                groups.setFieldName2(fieldName);
-            } else if (i == 2) {
-                groups.setFieldName3(fieldName);
-            } else if (i==3) {
-                groups.setFieldName4(fieldName);
-            } else if (i ==4) {
-                groups.setFieldName5(fieldName);
-            } else if (i==5) {
-                groups.setFieldName6(fieldName);
-            } else if (i==6) {
-                groups.setFieldName7(fieldName);
-            } else if (i==7) {
-                groups.setFieldName8(fieldName);
-            } else if (i==8) {
-                groups.setFieldName9(fieldName);
-            } else if (i==9) {
-                groups.setFieldName10(fieldName);
-            }
-        }
+        model.addAttribute("numOfFieldNames",Integer.parseInt(capturedGroup.getNum_of_fields()));
+        model.addAttribute("groupNames",new Group());
+        return "customize";
+    }
+    @PostMapping("/NotepadGroupSave")
+    public String saveCreatedGroup(@ModelAttribute("createdGroup") Group groupNames, Model model) throws ExecutionException, InterruptedException {
+        groupService = new GroupService();
+        groups.setFieldName1(groupNames.getFieldName1());
+        groups.setFieldName2(groupNames.getFieldName2());
+        groups.setFieldName3(groupNames.getFieldName3());
+        groups.setFieldName4(groupNames.getFieldName4());
+        groups.setFieldName5(groupNames.getFieldName5());
+        groups.setFieldName6(groupNames.getFieldName6());
+        groups.setFieldName7(groupNames.getFieldName7());
+        groups.setFieldName8(groupNames.getFieldName8());
+        groups.setFieldName9(groupNames.getFieldName9());
+        groups.setFieldName10(groupNames.getFieldName10());
         groupService.createGroup(groups);
         return "redirect:/";
     }

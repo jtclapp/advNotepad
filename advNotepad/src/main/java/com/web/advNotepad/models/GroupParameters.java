@@ -4,13 +4,11 @@ public class GroupParameters
 {
     String group_name;
     String num_of_fields;
-    String name_of_fields;
     String description;
 
-    public GroupParameters(String group_name, String num_of_fields, String name_of_fields, String description) {
+    public GroupParameters(String group_name, String num_of_fields, String description) {
         this.group_name = group_name;
         this.num_of_fields = num_of_fields;
-        this.name_of_fields = name_of_fields;
         this.description = description;
     }
 
@@ -32,14 +30,6 @@ public class GroupParameters
 
     public void setNum_of_fields(String num_of_fields) {
         this.num_of_fields = num_of_fields;
-    }
-
-    public String getName_of_fields() {
-        return name_of_fields;
-    }
-
-    public void setName_of_fields(String name_of_fields) {
-        this.name_of_fields = name_of_fields;
     }
 
     public String getDescription() {

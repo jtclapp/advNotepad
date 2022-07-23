@@ -355,14 +355,17 @@ textarea.input100 {
     </style>
 </head>
 <div class="content">
-    <h1 style="font-family: 'Courier New', monospace; margin-bottom: 10px">Advanced Notepad</h1>
+    <h1 style="font-family: 'Courier New', monospace;display: inline-block;">Advanced Notepad</h1>
+    <button onclick="location.href='/'" style="font-family: 'Courier New', monospace;
+    font-size: 24px;float:right;margin-right: 10px">Home</button>
 </div>
 <body>
 <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 <h1 class="contact100-form-title">Create a Group</h1>
-<form th:action="@{/NotepadGroupSave}" method="post" th:object="${createdGroup}">
+<div th:if= "${groupNames == null}">
+<form th:action="@{/NotepadGroupContinue}" method="post" th:object="${createdGroup}">
 <div class="wrap-input100 validate-input" data-validate="Group Name">
     <input required class="input100" type="text" th:field="*{group_name}" name="groupName" placeholder="Group Name">
     <span class="focus-input100"></span>
@@ -371,17 +374,61 @@ textarea.input100 {
     <input required class="input100" type="number" th:field="*{num_of_fields}" min="1" max="10" name="number" placeholder="Number of fields">
     <span class="focus-input100"></span>
 </div>
-<div class="wrap-input100 validate-input" data-validate="Names of the fields (comma separated list)">
-    <input required class="input100" type="text" th:field="*{name_of_fields}" name="FieldNames" placeholder="Names of the fields (comma separated list)">
-    <span class="focus-input100"></span>
-</div>
 <div class="wrap-input100 validate-input" data-validate="Description">
     <textarea class="input100" th:field="*{description}" name="description" placeholder="Description"></textarea>
     <span class="focus-input100"></span>
 </div>
 <div class="container-contact100-form-btn">
-    <button style="" class="contact100-form-btn">Create</button>
+    <button style="" class="contact100-form-btn">Continue</button>
 </div>
 </form>
+</div>
+<div th:if= "${groupNames != null}">
+    <form th:action="@{/NotepadGroupSave}" method="post" th:object="${groupNames}">
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 0">
+            <input required class="input100" type="text" th:field="*{fieldName1}" placeholder="Field Name #1">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 1">
+            <input required class="input100" type="text" th:field="*{fieldName2}" placeholder="Field Name #2">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 2">
+            <input required class="input100" type="text" th:field="*{fieldName3}" placeholder="Field Name #3">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 3">
+            <input required class="input100" type="text" th:field="*{fieldName4}" placeholder="Field Name #4">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 4">
+            <input required class="input100" type="text" th:field="*{fieldName5}" placeholder="Field Name #5">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 5">
+            <input required class="input100" type="text" th:field="*{fieldName6}" placeholder="Field Name #6">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 6">
+            <input required class="input100" type="text" th:field="*{fieldName7}" placeholder="Field Name #7">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 7">
+            <input required class="input100" type="text" th:field="*{fieldName8}" placeholder="Field Name #8">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 8">
+            <input required class="input100" type="text" th:field="*{fieldName9}" placeholder="Field Name #9">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" th:if="${numOfFieldNames} &gt; 9">
+            <input required class="input100" type="text" th:field="*{fieldName10}" placeholder="Field Name #10">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="container-contact100-form-btn">
+            <button style="" class="contact100-form-btn">Create</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
